@@ -15,9 +15,16 @@ import java.util.UUID;
 @EnableDiscoveryClient
 public class GridController {
 
-    @RequestMapping("/")
+    @RequestMapping("/protected")
     public @ResponseBody String getGrid() {
         // TODO implement real case
-        return "3x3";
+        return "protected";
+    }
+
+
+    @RequestMapping("/unprotected")
+    public @ResponseBody String unothorized() {
+        // TODO implement real case
+        return "unprotected";
     }
 }

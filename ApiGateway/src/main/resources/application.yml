@@ -4,12 +4,14 @@
 #  prefix: /services
 #  ignoredServices: lab-4-verb
 
-security:
-  user:
-    password: password
+#security:
+#  user:
+#    password: password
 
 spring:
   oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/uaa/user
     sso:
       home:
         secure: false
@@ -19,5 +21,3 @@ spring:
       userAuthorizationUri: http://localhost:9999/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
-    resource:
-      userInfoUri: http://localhost:9999/uaa/user
